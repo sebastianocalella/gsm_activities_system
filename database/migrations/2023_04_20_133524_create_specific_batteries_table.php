@@ -27,6 +27,12 @@ return new class extends Migration
                 ->on('chargers')
                 ->onUpdate('cascade')
                 ->onDelete('set null');
+            $table->unsignedBigInteger('battery_type_id')->nullable();
+            $table->foreign('battery_type_id')
+                ->references('id')
+                ->on('battery_types')
+                ->onUpdate('cascade')
+                ->onDelete('set null');
             $table->string('name',40);
             $table->date('purchase_date');
             $table->timestamps();
