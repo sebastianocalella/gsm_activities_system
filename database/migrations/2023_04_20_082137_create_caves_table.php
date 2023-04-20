@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('location',120);
             $table->float('latitude',20,15);
             $table->float('longitude',20,15);
-            $table->smallInteger('deep',2500);
-            $table->smallInteger('length',25000);
+            $table->smallInteger('deep');
+            $table->smallInteger('length');
             $table->timestamps();
         });
     }
