@@ -18,9 +18,11 @@ return new class extends Migration
             $table->unsignedBigInteger('qualification_id');
             $table->foreign('qualification_id')
                 ->references('id')
-                ->on('qualifications');
-            $table->string('name');
-            $table->string('surname');
+                ->on('qualifications')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->string('name',50);
+            $table->string('surname',50);
             $table->date('subscription_year');
             $table->timestamps();
         });
