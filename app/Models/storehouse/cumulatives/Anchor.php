@@ -9,6 +9,18 @@ class Anchor extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'amount', 'shape', 'to_shop'];
+    protected $fillable = [
+        'name',
+        'amount',
+        'shape',
+        'to_shop'
+    ];
 
+    public function activities(){
+        return $this->belongsToMany(Activity::class);
+    }
+
+    public function equipment(){
+        return $this->belongsTo(Equipment::class);
+    }
 }
