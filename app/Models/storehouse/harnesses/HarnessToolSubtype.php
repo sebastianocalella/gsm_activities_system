@@ -12,4 +12,8 @@ class HarnessToolSubtype extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function harnessToolType(){
+        return $this->belongsTo(HarnessToolType::class);
+    }
 }

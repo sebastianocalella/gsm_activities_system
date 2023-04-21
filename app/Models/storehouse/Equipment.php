@@ -14,6 +14,10 @@ class Equipment extends Model
         'name'
     ];
 
+    public function harnessTools(){
+        return $this->belongsToMany(HarnessTool::class);
+    }
+
     public function ropes(){
         return $this->belongsToMany(Rope::class);
     }

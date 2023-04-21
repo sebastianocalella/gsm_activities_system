@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Harness extends Model
 {
     use HasFactory;
+
+    public function harnessTools(){
+        return $this->belongsToMany(HarnessTool::class);
+    }
 }

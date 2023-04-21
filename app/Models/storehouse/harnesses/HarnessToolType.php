@@ -14,4 +14,12 @@ class HarnessToolType extends Model
         'branch',
         'expiration'
     ];
+
+    public function harnessTools(){
+        return $this->belongsToMany(HarnessTool::class);
+    }
+
+    public function harnessToolSubtypes(){
+        return $this->belongsToMany(HarnessToolSubtype::class);
+    }
 }
