@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('harness_tool_types', function (Blueprint $table) {
+        Schema::create('harnesses', function (Blueprint $table) {
             $table->id();
-            $table->string('name',50);
-            $table->string('branch',50);
-            $table->tinyInteger('expiration_year');
+            $table->tinyInteger('stock_number');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('harness_tool_types');
+        Schema::dropIfExists('harnesses');
     }
 };
