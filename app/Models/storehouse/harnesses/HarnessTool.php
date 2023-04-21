@@ -5,9 +5,11 @@ namespace App\Models\storehouse\harnesses;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class HarnesseToolSubtype extends Model
+class HarnessTool extends Model
 {
     use HasFactory;
-    
-    protected $fillable = ['name'];
+
+    protected $fillable = [
+        'purchase_date'
+    ];
 }
