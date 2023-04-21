@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('qualification_id');
+            $table->unsignedBigInteger('qualification_id')->nullable();
             $table->foreign('qualification_id')
                 ->references('id')
                 ->on('qualifications')
