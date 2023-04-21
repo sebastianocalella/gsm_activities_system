@@ -21,6 +21,7 @@ return new class extends Migration
                 ->on('harness_tool_types')
                 ->onUpdate('cascade')
                 ->onDelete('set null');
+            $table->string('name',40);
             $table->timestamps();
         });
     }
