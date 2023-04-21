@@ -18,7 +18,9 @@ return new class extends Migration
             $table->unsignedBigInteger('cave_id')->nullable();
             $table->foreign('cave_id')
                 ->references('id')
-                ->on('caves');
+                ->on('caves')
+                ->onUpdate('cascade')
+                ->onDelete('set null');
             $table->string('object',255);
             $table->string('target',255);
             $table->text('report')->nullable();
