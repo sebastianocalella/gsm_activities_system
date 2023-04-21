@@ -27,6 +27,9 @@ return new class extends Migration
                 ->on('universal_batteries')
                 ->onUpdate('cascade')
                 ->onDelete('set null');
+
+            $table->string('name', 50);
+            $table->date('purchase_date');
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('activity_eletronic_tool', function (Blueprint $table) {
+        Schema::create('activity_electronic_tool', function (Blueprint $table) {
             $table->unsignedBigInteger('activity_id');
             $table->foreign('activity_id') 
                 ->references('id')
@@ -21,14 +21,14 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
-            $table->unsignedBigInteger('eletronic_tool_id');
-            $table->foreign('eletronic_tool_id')
+            $table->unsignedBigInteger('electronic_tool_id');
+            $table->foreign('electronic_tool_id')
                 ->references('id')
-                ->on('eletronic_tools')
+                ->on('electronic_tools')
                 ->onDelete('cascade')
                 ->onDelete('cascade');
 
-            $table->primary(['activity_id', 'eletronic_tool_id']);
+            $table->primary(['activity_id', 'electronic_tool_id']);
             
             $table->timestamps();
         });
@@ -41,6 +41,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('activity_eletronic_tool');
+        Schema::dropIfExists('activity_electronic_tool');
     }
 };

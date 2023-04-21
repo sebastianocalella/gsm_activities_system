@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('specific_batteries', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('eletronic_tool_id')->nullable();
-            $table->foreign('eletronic_tool_id')
+            $table->unsignedBigInteger('electronic_tool_id')->nullable();
+            $table->foreign('electronic_tool_id')
                 ->references('id')
-                ->on('eletronic_tools')
+                ->on('electronic_tools')
                 ->onUpdate('cascade')
                 ->onDelete('set null');
             $table->unsignedBigInteger('charger_id')->nullable();
