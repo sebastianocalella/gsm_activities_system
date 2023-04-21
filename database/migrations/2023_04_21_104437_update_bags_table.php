@@ -13,18 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('anchors', function (Blueprint $table) {
-            
-            $table->dropColumn('form');
+        Schema::table('bags', function (Blueprint $table) {
 
-            // relation
-            $table->unsignedBigInteger('shape_id')->nullable();
-            $table->foreign('shape_id')
+            $table->dropColumn('size');
+
+            $table->unsignedBigInteger('size_id')->nullable();
+            $table->foreign('size_id')
                 ->references('id')
-                ->on('shapes')
+                ->on('sizes')
                 ->onUpdate('cascade')
                 ->onDelete('set null');
-            // end relation
         });
     }
 
@@ -35,11 +33,12 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('anchors', function (Blueprint $table) {
-            $table->string('form',40);
+        Schema::table('bags', function (Blueprint $table) {
 
-            $table->dropForeign(['shape_id']);
-            $table->dropColumn('shape_id');
+            $table->tinyInteger('size')->unsigned();
+
+            $table->dropForeign(['size_id']);
+            $table->dropColumn('size_id');
         });
     }
 };
