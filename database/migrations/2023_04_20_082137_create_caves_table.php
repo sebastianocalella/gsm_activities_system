@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('caves', function (Blueprint $table) {
             $table->id();
             $table->string('name',80);
-            $table->string('location',120);
-            $table->float('latitude',20,15);
-            $table->float('longitude',20,15);
-            $table->smallInteger('deep');
-            $table->smallInteger('length');
+            $table->string('location',120)->nullable();
+            $table->float('latitude',20,15)->nullable();
+            $table->float('longitude',20,15)->nullable();
+            $table->smallInteger('deep')->nullable();
+            $table->smallInteger('length')->nullable();
             $table->timestamps();
         });
     }
