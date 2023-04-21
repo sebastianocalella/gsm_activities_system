@@ -9,5 +9,5 @@ class Connector extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['color', 'purchase_date', 'with_ferrule'];
+    protected $fillable = ['color', 'purchase_date', 'shape', 'with_ferrule'];
 }

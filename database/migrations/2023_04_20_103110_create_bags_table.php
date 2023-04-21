@@ -22,7 +22,7 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('set null');
             $table->tinyInteger('amount')->unsigned();
-            $table->tinyInteger('size')->unsigned();
+            $table->string('size',40);
             $table->timestamps();
         });
     }

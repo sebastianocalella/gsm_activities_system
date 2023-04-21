@@ -15,16 +15,7 @@ return new class extends Migration
     {
         Schema::create('connectors', function (Blueprint $table) {
             $table->id();
-
-            // relation
-            $table->unsignedBigInteger('shape_id')->nullable();
-            $table->foreign('shape_id')
-                ->references('id')
-                ->on('shapes')
-                ->onUpdate('cascade')
-                ->onDelete('set null');
-            // end relation
-
+            $table->string('shape',30);
             $table->string('color', 50)->nullable();
             $table->date('purchase_date');
             $table->boolean('with_ferrule');

@@ -9,6 +9,6 @@ class Bag extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['amount'];
+    protected $fillable = ['amount', 'size'];
 
 }

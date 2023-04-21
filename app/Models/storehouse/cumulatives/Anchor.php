@@ -9,6 +9,6 @@ class Anchor extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'amount', 'to_shop'];
+    protected $fillable = ['name', 'amount', 'shape', 'to_shop'];
 
 }
