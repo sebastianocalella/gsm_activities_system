@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cave_id');
+            $table->unsignedBigInteger('cave_id')->nullable();
             $table->foreign('cave_id')
                 ->references('id')
                 ->on('caves');
             $table->string('object',255);
             $table->string('target',255);
-            $table->text('report');
+            $table->text('report')->nullable();
             $table->date('start_date');
-            $table->date('end_date');
+            $table->date('end_date')->nullable();
             $table->timestamps();
         });
     }
