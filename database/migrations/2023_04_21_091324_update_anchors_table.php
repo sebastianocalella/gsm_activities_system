@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('connectors', function (Blueprint $table) {
-            $table->id();
+        Schema::table('anchors', function (Blueprint $table) {
+            
+            $table->dropColumn('form');
 
             // relation
             $table->unsignedBigInteger('shape_id')->nullable();
@@ -24,11 +25,6 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('set null');
             // end relation
-
-            $table->string('color', 50)->nullable();
-            $table->date('purchase_date');
-            $table->boolean('with_ferrule');
-            $table->timestamps();
         });
     }
 
@@ -39,6 +35,11 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('connectors');
+        Schema::table('anchors', function (Blueprint $table) {
+            $table->string('form',40);
+
+            $table->dropForeign(['shape_id']);
+            
+        });
     }
 };

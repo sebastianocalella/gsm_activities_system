@@ -29,6 +29,8 @@ return new class extends Migration
                 ->onDelete('cascade');
 
             $table->primary(['activity_id', 'harness_tool_id']);
+
+            $table->timestamps();
         });
     }
 
