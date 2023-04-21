@@ -18,15 +18,15 @@ class Rope extends Model
         'diameter'
     ];
 
+    public function activities(){
+        return $this->belongsToMany(Activity::class);
+    }
+
     public function brand(){
         return $this->belongsTo(Brand::class);
     }
 
     public function equipment(){
         return $this->belongsTo(Equipment::class);
-    }
-
-    public function activities(){
-        return $this->belongsToMany(Activity::class);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models\activities;
 
 use App\Models\caves\Cave;
 use App\Models\members\Member;
+use App\Models\storehouse\cumulatives\Bag;
 use App\Models\storehouse\harnesses\HarnessTool;
 use App\Models\storehouse\ropes\Rope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -31,11 +32,15 @@ class Activity extends Model
 
     // storehouse many to many relations
 
-    public function ropes(){
-        return $this->belongsToMany(Rope::class);
+    public function bags(){
+        return $this->belongsToMany(Bag::class);
     }
 
     public function harnessTools(){
         return $this->belongsToMany(HarnessTool::class);
+    }
+
+    public function ropes(){
+        return $this->belongsToMany(Rope::class);
     }
 }

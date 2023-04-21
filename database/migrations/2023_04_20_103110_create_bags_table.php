@@ -21,6 +21,12 @@ return new class extends Migration
                 ->on('equipments')
                 ->onUpdate('cascade')
                 ->onDelete('set null');
+            $table->unsignedBigInteger('brand_id')->nullable();
+            $table->foreign('brand_id')
+                ->references('id')
+                ->on('brands')
+                ->onUpdate('cascade')
+                ->onDelete('set null');
             $table->tinyInteger('amount')->unsigned();
             $table->string('size',40);
             $table->timestamps();
