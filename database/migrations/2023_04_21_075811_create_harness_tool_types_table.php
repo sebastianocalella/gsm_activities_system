@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name',40);
             $table->string('branch',40);
-            $table->tinyInteger('expiration');
+            $table->tinyInteger('expiration')->nullable();
             $table->timestamps();
         });
     }
