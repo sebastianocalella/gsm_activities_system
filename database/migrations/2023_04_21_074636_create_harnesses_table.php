@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('harnesses', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('stock_number');
             $table->timestamps();
         });
     }
