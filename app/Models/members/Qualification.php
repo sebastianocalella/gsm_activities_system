@@ -13,4 +13,8 @@ class Qualification extends Model
         'name',
         'initials'
     ];
+
+    public function members(){
+        return $this->belongsToMany(Member::class);
+    }
 }
