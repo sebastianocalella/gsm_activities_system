@@ -21,6 +21,9 @@ return new class extends Migration
                 ->on('chargers')
                 ->onUpdate('cascade')
                 ->onDelete('set null');
+            $table->string('name',40);
+            $table->tinyInteger('amount');
+            $table->boolean('to_shop');
             $table->timestamps();
         });
     }
